@@ -16,11 +16,9 @@
 int		get_end_line(char *file)
 {
 	int		fd;
-	int		verif;
 	char	*str;
 
 	fd = open(file, O_RDWR);
-	verif = 0;
 	while (get_next_line(fd, &str) != -1)
 		ft_strdel(&str);
 	return (fd);
