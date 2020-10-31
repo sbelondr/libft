@@ -6,7 +6,7 @@
 /*   By: sbelondr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 17:31:25 by sbelondr          #+#    #+#             */
-/*   Updated: 2019/02/05 21:22:43 by sbelondr         ###   ########.fr       */
+/*   Updated: 2020/10/31 08:33:26 by sbelondr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ char		*ft_strtrim(char const *s)
 	i = 0;
 	while (s[cnt] && cnt <= last)
 		str[i++] = s[cnt++];
-	str[i] = '\0';
+	str[i] = 0;
 	return (str);
 }

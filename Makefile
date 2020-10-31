@@ -6,11 +6,11 @@
 #    By: sbelondr <sbelondr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/21 14:49:02 by sbelondr          #+#    #+#              #
-#    Updated: 2019/08/21 12:33:15 by sbelondr         ###   ########.fr        #
+#    Updated: 2020/09/24 15:47:57 by sbelondr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-DEBUG = no
+DEBUG = yes
 
 # Directory
 SRCDIR = srcs/
@@ -52,7 +52,7 @@ FT_PRINTF = ft_printf.c	parser.c gest_flag.c arg_s.c arg_n.c arg_convert.c arg_f
 	apply_arg.c	display.c tools.c tools_bis.c tools_float_bis.c ft_itoa_other.c\
 	ft_itoa_other_u_s.c ft_convert_base.c binary.c manage_float.c apply_arg_float.c\
 	tools_float.c multiplication_float.c add_float.c apply_arg_s.c apply_arg_n.c\
-	apply_arg_convert.c prepare.c
+	apply_arg_convert.c prepare.c manage_display.c
 
 SRCS_NAMES = ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcmp.c ft_strncmp.c\
 	ft_strcat.c ft_strncat.c ft_strlcat.c ft_strchr.c ft_strrchr.c ft_strstr.c\

@@ -6,7 +6,7 @@
 /*   By: sbelondr <sbelondr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 16:02:59 by sbelondr          #+#    #+#             */
-/*   Updated: 2019/04/08 10:47:00 by sbelondr         ###   ########.fr       */
+/*   Updated: 2020/10/01 18:33:35 by sbelondr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void		large_min_n(t_printf **lst, int len_str, int stock[3])
 		while (++i < len)
 			tmp[i] = c;
 		tmp[i] = '\0';
-		ft_display(tmp, &(*lst));
+		ft_manage_display(lst, tmp);
 		ft_strdel(&tmp);
 	}
 }
@@ -101,7 +101,7 @@ void		apply_arg_n(char *str, t_printf **lst)
 	ft_stock(&(*lst), str, &stock);
 	(stock[1] == 1) ? options_n(&(*lst), stock, neg, 1) : 1;
 	tmp = precision_n(str, &(*lst), neg);
-	(stock[1] == 1) ? ft_display(tmp, &(*lst)) : 0;
+	(stock[1] == 1) ? ft_manage_display(lst, tmp) : 0;
 	len_str = ft_strlen(tmp);
 	len_str = add_length(&(*lst), neg, stock, len_str);
 	if (stock[1] == 0 && ft_strchr_exist((*lst)->options, '0') &&
@@ -111,6 +111,6 @@ void		apply_arg_n(char *str, t_printf **lst)
 	(stock[1] == 0 && (ft_strchr_exist((*lst)->options, '0') == 0 ||
 		(ft_strchr_exist((*lst)->options, '0') && (*lst)->precision != -2))) ?
 		options_n(&(*lst), stock, neg, 1) : 1;
-	(stock[1] == 0) ? ft_display(tmp, &(*lst)) : 0;
+	(stock[1] == 0) ? ft_manage_display(lst, tmp) : 0;
 	ft_strdel(&tmp);
 }

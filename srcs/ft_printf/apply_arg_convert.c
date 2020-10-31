@@ -6,7 +6,7 @@
 /*   By: sbelondr <sbelondr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 11:37:56 by sbelondr          #+#    #+#             */
-/*   Updated: 2019/04/08 10:46:41 by sbelondr         ###   ########.fr       */
+/*   Updated: 2020/10/01 18:34:47 by sbelondr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void		large_min_convert(t_printf **lst, int len_str, int stock[3])
 		while (++i < len)
 			tmp[i] = c;
 		tmp[i] = '\0';
-		ft_display(tmp, &(*lst));
+		ft_manage_display(lst, tmp);
 		ft_strdel(&tmp);
 	}
 }
@@ -75,7 +75,7 @@ void		apply_arg_convert(char *str, t_printf **lst)
 	}
 	tmp = precision_n(str, &(*lst), 0);
 	(stock[1] == 1) ? apply_hash(&(*lst)) : 0;
-	(stock[1] == 1) ? ft_display(tmp, &(*lst)) : 0;
+	(stock[1] == 1) ? ft_manage_display(lst, tmp) : 0;
 	len_str = ft_strlen(tmp);
 	(stock[1] == 0 && ft_strchr_exist((*lst)->options, '0') &&
 	(*lst)->precision == -2) ? apply_hash(&(*lst)) : 0;
@@ -83,6 +83,6 @@ void		apply_arg_convert(char *str, t_printf **lst)
 	(stock[1] == 0 && (ft_strchr_exist((*lst)->options, '0') == 0 ||
 		(ft_strchr_exist((*lst)->options, '0') && (*lst)->precision != -2))) ?
 		apply_hash(&(*lst)) : 0;
-	(stock[1] == 0) ? ft_display(tmp, &(*lst)) : 0;
+	(stock[1] == 0) ? ft_manage_display(lst, tmp) : 0;
 	ft_strdel(&tmp);
 }

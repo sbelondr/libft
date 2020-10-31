@@ -6,7 +6,7 @@
 /*   By: sbelondr <sbelondr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 18:11:05 by sbelondr          #+#    #+#             */
-/*   Updated: 2019/04/08 10:46:50 by sbelondr         ###   ########.fr       */
+/*   Updated: 2020/10/01 18:32:19 by sbelondr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	large_min_float(t_printf **lst, int len_str, int stock[3])
 		while (++i < len)
 			tmp[i] = c;
 		tmp[i] = '\0';
-		ft_display(tmp, &(*lst));
+		ft_manage_display(lst, tmp);
 		ft_strdel(&tmp);
 	}
 }
@@ -90,12 +90,12 @@ void	ft_apply_arg_float(char (*str)[BUF_S], t_printf **lst, int neg)
 	tmp = ft_precision_float(&(*str), &(*lst));
 	len_str = ft_strlen(tmp) + len_float(&(*lst), stock, neg);
 	affiche_option(*lst, neg, stock, 0);
-	(stock[1] == 1) ? ft_display(tmp, &(*lst)) : 0;
+	(stock[1] == 1) ? ft_manage_display(lst, tmp) : 0;
 	affiche_option(*lst, neg, stock, 1);
 	affiche_hash(&(*lst), stock, 0);
 	large_min_float(&(*lst), len_str, stock);
 	affiche_option(*lst, neg, stock, 2);
-	(stock[1] == 0) ? ft_display(tmp, &(*lst)) : 0;
+	(stock[1] == 0) ? ft_manage_display(lst, tmp) : 0;
 	affiche_hash(&(*lst), stock, 1);
 	affiche_hash(&(*lst), stock, 2);
 	ft_strdel(&tmp);

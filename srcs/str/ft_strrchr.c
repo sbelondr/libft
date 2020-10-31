@@ -6,7 +6,7 @@
 /*   By: sbelondr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 10:25:44 by sbelondr          #+#    #+#             */
-/*   Updated: 2018/11/16 10:40:10 by sbelondr         ###   ########.fr       */
+/*   Updated: 2020/10/31 08:31:01 by sbelondr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *s, int c)
 			last = cnt;
 	if (last != -1)
 		return ((char*)s + last);
-	if (c == '\0')
+	if (!c)
 		return ((char*)s + cnt);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: sbelondr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 16:05:45 by sbelondr          #+#    #+#             */
-/*   Updated: 2018/12/17 10:50:39 by sbelondr         ###   ########.fr       */
+/*   Updated: 2020/10/31 08:30:08 by sbelondr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ char	*ft_strnew(size_t size)
 	if (!(str = (char*)malloc(sizeof(char) * size + 1)))
 		return (NULL);
 	while (++cnt <= size)
-		str[cnt] = '\0';
+		str[cnt] = 0;
 	return (str);
 }

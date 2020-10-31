@@ -6,7 +6,7 @@
 /*   By: sbelondr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 16:54:05 by sbelondr          #+#    #+#             */
-/*   Updated: 2019/02/05 21:22:12 by sbelondr         ###   ########.fr       */
+/*   Updated: 2020/10/31 08:32:56 by sbelondr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	while (s[start] && len > 0)
 	{
 		str[cnt] = s[start++];
-		len--;
-		cnt++;
+		--len;
+		++cnt;
 	}
-	str[cnt] = '\0';
+	str[cnt] = 0;
 	return (str);
 }

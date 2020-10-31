@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbelondr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 19:42:20 by sbelondr          #+#    #+#             */
-/*   Updated: 2019/03/07 10:49:46 by sbelondr         ###   ########.fr       */
+/*   Updated: 2020/10/01 18:29:11 by sbelondr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ typedef struct		s_printf
 	int				index;
 	int				fd;
 	int				color;
+  char      data[1024];
+  size_t    len_data;
 }					t_printf;
 
 typedef uint64_t	t_u64;
@@ -123,8 +125,8 @@ void				ft_apply_arg_float(char (*str)[BUF_S], t_printf **lst,
 ** display.c
 */
 
-void				ft_display(char dst[BUF_S], t_printf **lst);
-void				ft_display_color(char dst[BUF_S], t_printf **lst);
+//void				ft_display(char dst[BUF_S], t_printf **lst);
+//void				ft_display_color(char dst[BUF_S], t_printf **lst);
 
 /*
 ** tools.c
@@ -235,5 +237,10 @@ void				options_n(t_printf **lst, int stock[3], int neg, int rd);
 
 void				apply_arg_convert(char *str, t_printf **lst);
 void				apply_hash_p(t_printf **lst);
+
+/*
+** manage_display.c
+*/
+void        ft_manage_display(t_printf **lst, char *str);
 
 #	endif
