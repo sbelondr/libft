@@ -6,23 +6,23 @@
 /*   By: sbelondr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 19:42:20 by sbelondr          #+#    #+#             */
-/*   Updated: 2019/08/21 10:55:17 by sbelondr         ###   ########.fr       */
+/*   Updated: 2020/12/23 22:56:37 by sbelondr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef LIBFT_H
-#	define LIBFT_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
-#include <unistd.h>
-#include <strings.h>
-#include <stdlib.h>
+# include <unistd.h>
+# include <strings.h>
+# include <stdlib.h>
 
-#define BUF_S		1024
-#define BUF_SIZE	30
+# define BUF_S		1024
+# define BUF_SIZE	30
 
-#include "ft_printf.h"
+# include "ft_printf.h"
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	size_t			content_size;
@@ -71,7 +71,7 @@ char				*ft_strncat(char *s1, const char *s2, size_t n);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *haystack, const char *needle);
-char				*ft_strnstr(const char *haystack, const char *needle,
+char				*ft_strnstr(const char *haystack, const char *needle, \
 					size_t len);
 char				*ft_strnew(size_t size);
 char				*ft_strmap(char const *s, char (*f)(char));
@@ -102,7 +102,7 @@ int					ft_chrn_index(char *s, char c, int i);
 void				ft_deplace(char (*tab)[BUF_S]);
 void				ft_pow_array_fix(int i, char (*nb)[BUF_S]);
 void				ft_reverse_tablo(char (*tab)[BUF_S]);
-void				ft_strsub_tab_fix(char (*tab)[BUF_S], char src[BUF_S],
+void				ft_strsub_tab_fix(char (*tab)[BUF_S], char src[BUF_S], \
 		int start, int len);
 int					ft_cnt_chr(char *str, char c);
 void				ft_strdeldup(char **str, char *src);

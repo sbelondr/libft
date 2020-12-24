@@ -6,13 +6,13 @@
 /*   By: sbelondr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 00:13:10 by sbelondr          #+#    #+#             */
-/*   Updated: 2020/10/31 08:29:26 by sbelondr         ###   ########.fr       */
+/*   Updated: 2020/12/23 23:48:34 by sbelondr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <strings.h>
 
-int					ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t			cpt;
 	size_t			result;

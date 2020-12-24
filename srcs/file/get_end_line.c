@@ -6,14 +6,14 @@
 /*   By: sbelondr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/26 10:48:31 by sbelondr          #+#    #+#             */
-/*   Updated: 2019/03/26 10:52:59 by sbelondr         ###   ########.fr       */
+/*   Updated: 2020/12/23 23:05:06 by sbelondr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <fcntl.h>
 
-int		get_end_line(char *file)
+int	get_end_line(char *file)
 {
 	int		fd;
 	char	*str;

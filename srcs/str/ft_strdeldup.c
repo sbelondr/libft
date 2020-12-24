@@ -6,13 +6,13 @@
 /*   By: sbelondr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 08:50:33 by sbelondr          #+#    #+#             */
-/*   Updated: 2020/10/31 08:26:40 by sbelondr         ###   ########.fr       */
+/*   Updated: 2020/12/23 23:46:25 by sbelondr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_strdeldup(char **str, char *src)
+void	ft_strdeldup(char **str, char *src)
 {
 	if (!(str && src))
 		return ;
