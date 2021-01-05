@@ -6,7 +6,7 @@
 #    By: sbelondr <sbelondr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/21 14:49:02 by sbelondr          #+#    #+#              #
-#    Updated: 2020/09/24 15:47:57 by sbelondr         ###   ########.fr        #
+#    Updated: 2021/01/05 14:17:43 by sbelondr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,7 @@ SRCS_NAMES = ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcmp.c ft_str
 	ft_lstmap.c $(FT_PRINTF)
 
 OBJS_NAMES = $(SRCS_NAMES:.c=.o)
-	HEADERS_NAMES = libft.h ft_printf.h
+HEADERS_NAMES = libft.h ft_printf.h
 
 SRC = $(addprefix $(SRCDIR), $(SRCS_NAMES))
 OBJ = $(addprefix $(OBJDIR), $(OBJS_NAMES))
@@ -87,6 +87,18 @@ CREATE = mkdir -p
 DEL = /bin/rm -rf
 PRINT = printf
 PHONY = all clean fclean re norm help
+
+# Tests
+
+TEST_FLAG = -lcheck -lm -lrt -lpthread
+TEST_FILE = main.c test_num.c test_array.c test_char.c
+TEST_FOLDER = tests
+TEST_OBJ_FOLDER = $(TEST_FOLDER)/objs
+TEST_SRC_FOLDER = $(TEST_FOLDER)/srcs/
+TEST_SRC = $(addprefix $(TEST_SRC_FOLDER), $(TEST_FILE))
+#TEST_OBJ_FILE = $(TEST_FILE:.c=.o)
+#TEST_OBJ = $(addprefix $(TEST_OBJ_FOLDER), $(TEST_OBJ_FILE))
+
 
 # Color
 
@@ -138,6 +150,10 @@ fclean: verif clean
 	@$(PRINT) "$(BLUE)libft$(CLOSE): fclean -> $(GREEN)Ok$(CLOSE)\n"
 
 re: fclean all
+
+test: all
+	@$(CC) $(TEST_SRC) $(TEST_FLAG) $(CPPFLAGS) libs/libft.a -o check_unit_tests
+	@./check_unit_tests
 
 norm:
 	@norminette **/*.[ch]
